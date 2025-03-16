@@ -65,6 +65,8 @@ Default: `''`
 slack_summary:
   name: 'Post summary to Slack'
   runs-on: ubuntu-latest
+  permissions:
+    actions: read
   if: always() # Always post a summary, even if jobs have failed
   needs: # Only completed jobs are included in the summary, so this should run at the end of your workflow
     - test
